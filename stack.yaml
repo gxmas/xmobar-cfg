@@ -1,7 +1,7 @@
 resolver: lts-18.8
 
 packages:
-- xmobar.git
+- xmobar
 
 extra-deps:
 - iwlib-0.1.0
