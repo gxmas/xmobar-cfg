@@ -1,0 +1,27 @@
+#!/usr/bin/sh
+
+OBJSDIR=$(mktemp -d)
+
+XMOBAR=${1:-/home/gnoel/.local/bin/xmobar}
+
+stack ghc -- \
+    --make xmobar.hs \
+    -i \
+    -ilib \
+    -fforce-recomp \
+    -main-is main \
+    -v0 \
+    -odir "$OBJSDIR" \
+    -hidir "$OBJSDIR" \
+    -threaded \
+    -rtsopts \
+    -with-rtsopts \
+    -V0 \
+    -o "$XMOBAR"
+
+status=$?
+
+[ -x "$1" ] && strip "$1"
+[ -d "$OBJSDIR" ] && rm -r "$OBJSDIR"
+
+exit $status
