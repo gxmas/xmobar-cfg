@@ -7,7 +7,7 @@ main = xmobar config
 
 config :: Config
 config = defaultConfig
-    { font = "xft:Fira Code:size=14:style=bold:antialias=true:autohint=false:rgba=rbg"
+    { font = "xft:Fira Code:size=8:style=bold:antialias=true:autohint=false:rgba=rbg"
     , additionalFonts =
         [ "xft:Mononoki Nerd Font:size=10:antialias=true:hinting=true"
         , "xft:FontAwesome:size=10"
