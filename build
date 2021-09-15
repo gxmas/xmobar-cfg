@@ -4,7 +4,9 @@ OBJSDIR=$(mktemp -d)
 
 XMOBAR=${1:-/home/gnoel/.local/bin/xmobar}
 
-stack ghc -- \
+stack ghc \
+    --package "hostname" \
+    -- \
     --make xmobar.hs \
     -i \
     -ilib \
